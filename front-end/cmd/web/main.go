@@ -17,8 +17,8 @@ func main() {
 
 	if err != nil {
 		// firefox is fighting me in manjaro for port 80 usage, so adding an extra try for port 8080, should be fine in docker
-		fmt.Println("Starting front end service on port 8080")
-		finalErr := http.ListenAndServe(":8080", nil)
+		fmt.Println("Starting front end service on port 8081")
+		finalErr := http.ListenAndServe(":8081", nil)
 		if finalErr != nil {
 			log.Panic(finalErr)
 		}
