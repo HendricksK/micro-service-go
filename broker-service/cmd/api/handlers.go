@@ -51,7 +51,7 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (app *Config) logItem(w, http.ResponseWriter, entry LogPayLoad) {
+func (app *Config) logItem(w http.ResponseWriter, entry LogPayLoad) {
 	// create json send to auth microservice
 	jsonData, _ := json.MarshalIndent(entry, "", "\t")
 
@@ -84,7 +84,7 @@ func (app *Config) logItem(w, http.ResponseWriter, entry LogPayLoad) {
 	payload.Message = "logged"
 
 	app.writeJSON(w, http.StatusAccepted, payload)
-} 
+}
 
 func (app *Config) authenticate(w http.ResponseWriter, a AuthPayload) {
 	// create json send to auth microservice
