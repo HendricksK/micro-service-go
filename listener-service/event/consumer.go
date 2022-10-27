@@ -28,6 +28,7 @@ func NewConsumer(conn *amqp.Connection) (Consumer, error) {
 		return Consumer{}, err
 	}
 
+	return consumer, nil
 }
 
 func (consumer *Consumer) setup() error {
